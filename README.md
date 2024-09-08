@@ -3,7 +3,7 @@ Extract all github repo information
 
 using the script we can pull all the following information from Github.
 `
-Github Org Name,Repository,Repository URL,Default Branch,Branches,Last Commit Date For Default Branch,Contributor Usernames,Contributor EmailsUnique File Types Extensions In The Default Repo
+Github Org Name,Repository,Repository URL,Default Branch,Branches,Last Commit Date For Default Branch,Contributor Usernames,Contributor Emails,Unique File Types Extensions In The Default Repo
 `
 
 
