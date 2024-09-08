@@ -15,7 +15,7 @@ Python >= 3.9
 ```bash
   pip install -r requirements.txt
 ```
-### To export the data from ADO using python script
+### To export the data using python script
 ```bash
 python fetch_github_repos.py --pat_token <your_github_pat_token> org1 org2 --base_url https://github.yourcompany.com/api/v3 --output output_filename.html
 ```
