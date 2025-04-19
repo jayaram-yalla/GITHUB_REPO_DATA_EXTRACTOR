@@ -17,7 +17,9 @@ Python >= 3.9
 ```
 ### To export the data using python script
 ```bash
-python fetch_github_repos.py --pat_token <your_github_pat_token> org1 org2 --base_url https://github.yourcompany.com/api/v3 --output output_filename.html
+python fetch_github_repos.py \
+  --org org1,ghp_PAT1,https://api.github.com \
+  --org org2,ghp_PAT2,https://github.yourcompany.com/api/v3
 ```
 ## 
 
