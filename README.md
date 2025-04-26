@@ -1,29 +1,41 @@
-# GITHUB_REPO_DATA_EXTRACTOR
-Extract all github repo information
 
-using the script we can pull all the following information from Github.
-`
-Github Org Name,Repository,Repository URL,Default Branch,Branches,Last Commit Date For Default Branch,Contributor Usernames,Contributor Emails,Unique File Types Extensions In The Default Repo
-`
+# GitHub Repo Data Extractor (Enterprise-Ready, Resumable, Rate-Limit Safe)
 
+This script extracts key metadata for repositories in a GitHub organization and exports it to an HTML file.
 
-## requirements
+## ✅ Features
+- Handles GitHub API rate limits (waits & retries safely)
+- Extracts **Contributor Usernames** and **Contributor Emails** (commit-based retrieval)
+- Supports large organizations via **resumable scans**
+- Saves intermediate progress in `cache/`
+- Exports final results to `.html` with index
+- Works with both GitHub SaaS Enterprise tenants and Public GitHub
 
-Python >= 3.9
+## 📦 Requirements
+- Python >= 3.9
+- GitHub Personal Access Token (PAT) with necessary read access
 
-### Install the python dependencies before running the script 
+## 🛠 Installation
 ```bash
-  pip install -r requirements.txt
+pip install PyGithub pandas tqdm
 ```
-### To export the data using python script
-```bash
-python fetch_github_repos.py \
-  --org org1,ghp_PAT1,https://api.github.com \
-  --org org2,ghp_PAT2,https://github.yourcompany.com/api/v3
-```
-## 
 
-[HOW TO GENERATE PAT TOKEN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
-## 🔗 Links to connect with me
+## 🚀 Usage
+```bash
+python fetch_github_repos_resumable.py --org "org_name,pat_token,base_url"
+```
+
+### Example
+```bash
+python fetch_github_repos_resumable.py --org "GITHUB_ORG_NAME,ghp_exampletoken,https://api.github.com"
+```
+
+- You can specify multiple `--org` options.
+- Output HTML and cache files are generated for each organization.
+
+## 📂 Output Files
+- `cache/orgname_repo_cache.csv` — Intermediate cached results for resumability
+- `orgname_repo_details.html` — Final HTML report including contributor details
+
+## 🔗 Connect With Me
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/jayaramyalla)
-[![medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://jayaramyalla.medium.com/)
